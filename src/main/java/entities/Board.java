@@ -1,5 +1,7 @@
 package entities;
 
+import utils.Constants;
+
 import java.util.Random;
 
 public class Board implements entities.interfaces.Board {
@@ -7,10 +9,12 @@ public class Board implements entities.interfaces.Board {
     private final int NUMBER_OF_MINES;
     private String[][] playerField;
     private String[][] gameField;
-    private final String unknown = "?";
+    private final String unknown = "-";
     private final String mine = "*";
     private int cellsLeft;
-    boolean gameOver=false;
+    private boolean gameOver=false;
+    private final static int TEN=10;
+
     public Board(int gridSize, int numberOfMines) {
         this.GRID_SIZE=gridSize;
         this.gameField = new String[gridSize][gridSize];
@@ -23,14 +27,35 @@ public class Board implements entities.interfaces.Board {
     }
   public void printField()
     {
-        for(int x = 0; x <playerField.length; x++){
-            for(int y = 0; y < playerField[x].length ; y++){
-                if(y > 0 && y < playerField[x].length)
-                    System.out.print("|");
-                else
-                    System.out.println();
+        System.out.println(Constants.CURRENT_STATUS);
+        System.out.print("    ");
+        for (int i = 0; i < GRID_SIZE; i++) {
+            if (i>=10)
+            {
+                System.out.printf("%d",i%10);
 
-                System.out.print(playerField[x][y]);
+            }
+            else {
+                System.out.printf("%d", i);
+            }
+
+        }
+        for(int row = 0; row <playerField.length; row++){
+            for(int col = 0; col < playerField[row].length ; col++){
+               // System.out.print(row);
+                if(col > 0 && col < playerField[row].length) {
+                    System.out.print("");
+                }
+                else {
+                    System.out.println();
+                    System.out.printf("%s  ",row);
+                    if (row<TEN)
+                    {
+                        System.out.print(" ");
+                    }
+                }
+
+                System.out.print(playerField[row][col]);
             }
         }
         System.out.println();
@@ -58,6 +83,7 @@ public class Board implements entities.interfaces.Board {
             } else {
                 if (isMine(row, col)) {
                     this.gameOver = true;
+                    showMines();
                     return;
                 } else {
                    int count=adjacentMines(row, col);
@@ -77,7 +103,21 @@ public class Board implements entities.interfaces.Board {
         System.out.println();
         System.out.println(cellsLeft);
     }
-//This method keeps track of the remaining cells
+
+    private void showMines() {
+        for (int x = 0; x <GRID_SIZE ; x++) {
+            for (int y = 0; y < GRID_SIZE; y++) {
+                if (gameField[x][y].equals(mine))
+                {
+                    playerField[x][y]=mine;
+                }
+            }
+
+        }
+        printField();
+    }
+
+    //This method keeps track of the remaining cells
     private int cellsLeftToFlip() {
         int count=0;
         for (int i = 0; i < GRID_SIZE; i++) {

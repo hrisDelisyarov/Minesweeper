@@ -46,9 +46,9 @@ public class Controller {
     }
 
     private Board start() {
-        int gridSize=0;
+        int gridSize=-1;
         int minesNumber=0;
-        while(gridSize<1 || gridSize>3) {
+        while(gridSize<0 || gridSize>2) {
             System.out.println(Constants.CHOOSE_DIFFICULTY);
             System.out.println(Constants.BEGINNER_DIFFICULTY);
             System.out.println(Constants.INTERMEDIATE_DIFFICULTY);
@@ -62,15 +62,15 @@ public class Controller {
         }
         switch(gridSize)
         {
-            case 1:
+            case 0:
                 gridSize=9;
                 minesNumber=10;
                 break;
-            case 2:
+            case 1:
                 gridSize=16;
                 minesNumber=40;
                 break;
-            case 3:
+            case 2:
                 gridSize=24;
                 minesNumber=99;
                 break;
