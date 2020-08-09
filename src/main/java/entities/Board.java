@@ -35,6 +35,7 @@ public class Board implements entities.interfaces.Board {
                 System.out.print(playerField[x][y]);  //Prints out content of each tile.
             }
         }
+        System.out.println();
     }
 //The move method first makes a bound check, then checks if it's the first turn and if it's not - proceed to normal movement
     @Override
@@ -47,18 +48,16 @@ public class Board implements entities.interfaces.Board {
                   //  System.out.println("it's a mine");
                     gameField[row][col] = unknown;
                     playerField[row][col]=Integer.toString(adjacentMines(row, col));
-                    cellsLeft--;
                     generateANewMine();
                     printField();
                     return;
                 }else {
                     int count = adjacentMines(row, col);
                     if (count == 0) {
-                        this.cellsLeft -= recursiveMovement(row, col);
+                       recursiveMovement(row, col);
                     }else
                     {
                         playerField[row][col]=Integer.toString(count);
-                        cellsLeft--;
                     }
                 }
             } else {
@@ -69,47 +68,62 @@ public class Board implements entities.interfaces.Board {
                    int count=adjacentMines(row, col);
                    if (count==0)
                    {
-                    this.cellsLeft-=recursiveMovement(row,col);
+                    recursiveMovement(row,col);
                    }
                    else
                    {
                        playerField[row][col]=Integer.toString(count);
-                       this.cellsLeft--;
                    }
                 }
             }
         }
+      this.cellsLeft= cellsLeftToFlip();
         printField();
+        System.out.println();
+        System.out.println(cellsLeft);
     }
-// This method handles recursive "movement" - revealing of all adjacent cells. Returns int for the calculation of remaining "moves".
-    private int recursiveMovement(int row, int col) {
-        int cellCount=1;
+
+    private int cellsLeftToFlip() {
+        int count=0;
+        for (int i = 0; i < GRID_SIZE; i++) {
+            for (int j = 0; j <GRID_SIZE ; j++) {
+                if (!playerField[i][j].equals(unknown))
+                {
+                    count++;
+                }
+            }
+        }
+        return (GRID_SIZE*GRID_SIZE)-(NUMBER_OF_MINES+count);
+    }
+
+    // This method handles recursive "movement" - revealing of all adjacent cells. Returns int for the calculation of remaining "moves".
+    private void recursiveMovement(int row, int col) {
         int adjacentMines=adjacentMines(row, col);
         playerField[row][col]=Integer.toString(adjacentMines);
         if (adjacentMines>0)
         {
-            return cellCount;
+            return;
         }
         else{
             if (isValid(row-1,col)&& playerField[row-1][col].equals(unknown))
             {
-               cellCount+= recursiveMovement(row-1,col);
+              recursiveMovement(row-1,col);
             }
             if (isValid(row,col+1)&& playerField[row][col+1].equals(unknown))
             {
-                cellCount+=recursiveMovement(row,col+1);
+                recursiveMovement(row,col+1);
             }
             if (isValid(row+1,col)&& playerField[row+1][col].equals(unknown))
             {
-                cellCount+=recursiveMovement(row+1,col);
+                recursiveMovement(row+1,col);
             }
             if (isValid(row,col-1)&& playerField[row][col-1].equals(unknown))
             {
-                cellCount+=recursiveMovement(row,col-1);
+                recursiveMovement(row,col-1);
             }
         }
 
-        return cellCount;
+        return;
     }
 
     //This method is used to generate a new mine in case of the player stepping on it during his first turn
@@ -154,8 +168,7 @@ public class Board implements entities.interfaces.Board {
 
         }
     }
-//TODO: Adjacent is not properly interacting with the Array, fix upon noticing this, thank you me!
-    @Override
+//This method check surrounding cells for mines.
     public int adjacentMines(int row, int col) {
         int count=0;
         //Check North

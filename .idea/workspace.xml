@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf9a4d23-1bcd-4579-a625-f3db6e7a01c4" name="Default Changelist" comment="" />
+    <list default="true" id="bf9a4d23-1bcd-4579-a625-f3db6e7a01c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Board.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,21 +37,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/entities/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1479">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="142">
+              <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
               <folding>
+                <element signature="method#generateANewMine#0;class#Board#0" />
+                <element signature="method#generateField#0;class#Board#0" />
                 <element signature="method#adjacentMines#0;class#Board#0" />
-                <element signature="e#4576#4658#1" />
-                <element signature="e#7291#7292#0" expanded="true" />
-                <element signature="method#iter#0;class#Board#0" />
+                <element signature="e#2793#2892#1" />
+                <element signature="e#2962#3063#1" />
+                <element signature="e#3125#3225#1" />
+                <element signature="e#3296#3398#1" />
+                <element signature="e#3462#3561#1" />
+                <element signature="e#3631#3732#1" />
+                <element signature="e#3794#3892#1" />
+                <element signature="e#3963#4065#1" />
+                <element signature="e#7489#7490#0" expanded="true" />
                 <element signature="e#4751#4812#1" />
-                <element signature="e#7445#7446#0" expanded="true" />
+                <element signature="e#7643#7644#0" expanded="true" />
                 <element signature="e#4846#4883#1" />
-                <element signature="e#7516#7517#0" expanded="true" />
-                <element signature="e#7581#7582#0" expanded="true" />
+                <element signature="e#7714#7715#0" expanded="true" />
+                <element signature="e#7779#7780#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,13 +74,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
+            <state relative-caret-position="367">
               <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#start#0;class#Controller#0" />
               </folding>
             </state>
           </provider>
@@ -93,6 +106,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -114,6 +130,7 @@
     <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -188,6 +205,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="F:/MineSweeper-master" />
@@ -244,15 +262,16 @@
       <workItem from="1596856641880" duration="1614000" />
       <workItem from="1596865524066" duration="4095000" />
       <workItem from="1596873164868" duration="19665000" />
-      <workItem from="1596935052849" duration="10284000" />
+      <workItem from="1596935052849" duration="13790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35658000" />
+    <option name="totallyTimeSpent" value="39164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -262,9 +281,9 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4688385" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.24362606" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -292,10 +311,10 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/Controller.java</url>
-          <line>35</line>
+          <url>file://$PROJECT_DIR$/src/main/java/entities/Board.java</url>
+          <line>82</line>
           <properties />
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -342,30 +361,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entities/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="367">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
-            <element signature="method#adjacentMines#0;class#Board#0" />
-            <element signature="e#4576#4658#1" />
-            <element signature="e#7291#7292#0" expanded="true" />
-            <element signature="method#iter#0;class#Board#0" />
-            <element signature="e#4751#4812#1" />
-            <element signature="e#7445#7446#0" expanded="true" />
-            <element signature="e#4846#4883#1" />
-            <element signature="e#7516#7517#0" expanded="true" />
-            <element signature="e#7581#7582#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#Controller#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/entities/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="142">
+          <caret line="158" column="22" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#generateANewMine#0;class#Board#0" />
+            <element signature="method#generateField#0;class#Board#0" />
+            <element signature="method#adjacentMines#0;class#Board#0" />
+            <element signature="e#2793#2892#1" />
+            <element signature="e#2962#3063#1" />
+            <element signature="e#3125#3225#1" />
+            <element signature="e#3296#3398#1" />
+            <element signature="e#3462#3561#1" />
+            <element signature="e#3631#3732#1" />
+            <element signature="e#3794#3892#1" />
+            <element signature="e#3963#4065#1" />
+            <element signature="e#7489#7490#0" expanded="true" />
+            <element signature="e#4751#4812#1" />
+            <element signature="e#7643#7644#0" expanded="true" />
+            <element signature="e#4846#4883#1" />
+            <element signature="e#7714#7715#0" expanded="true" />
+            <element signature="e#7779#7780#0" expanded="true" />
           </folding>
         </state>
       </provider>
