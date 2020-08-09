@@ -9,7 +9,6 @@ public class Board implements entities.interfaces.Board {
     private String[][] gameField;
     private final String unknown = "?";
     private final String mine = "*";
-    private final String empty = "   ";
     private int cellsLeft;
     boolean gameOver=false;
     public Board(int gridSize, int numberOfMines) {
@@ -26,13 +25,12 @@ public class Board implements entities.interfaces.Board {
     {
         for(int x = 0; x <playerField.length; x++){
             for(int y = 0; y < playerField[x].length ; y++){
-                //Formats row.
                 if(y > 0 && y < playerField[x].length)
                     System.out.print("|");
                 else
                     System.out.println();
 
-                System.out.print(playerField[x][y]);  //Prints out content of each tile.
+                System.out.print(playerField[x][y]);
             }
         }
         System.out.println();
@@ -41,11 +39,8 @@ public class Board implements entities.interfaces.Board {
     @Override
     public void move(int row, int col) {
         if (isValid(row, col)) {
-           // System.out.println("it's valid");
-            boolean isAMine=isMine(row,col);
             if (this.cellsLeft == calcInitialFreeCells()) {
                 if (isMine(row, col)) {
-                  //  System.out.println("it's a mine");
                     gameField[row][col] = unknown;
                     playerField[row][col]=Integer.toString(adjacentMines(row, col));
                     generateANewMine();
@@ -82,7 +77,7 @@ public class Board implements entities.interfaces.Board {
         System.out.println();
         System.out.println(cellsLeft);
     }
-
+//This method keeps track of the remaining cells
     private int cellsLeftToFlip() {
         int count=0;
         for (int i = 0; i < GRID_SIZE; i++) {
@@ -168,7 +163,7 @@ public class Board implements entities.interfaces.Board {
 
         }
     }
-//This method check surrounding cells for mines.
+//This method checks surrounding cells for mines.
     public int adjacentMines(int row, int col) {
         int count=0;
         //Check North
@@ -254,10 +249,7 @@ public class Board implements entities.interfaces.Board {
 
 
 
-    @Override
-    public void iter() {
 
-    }
     private int calcInitialFreeCells()
     {
         return (GRID_SIZE*GRID_SIZE)-NUMBER_OF_MINES;
